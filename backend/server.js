@@ -17,13 +17,13 @@ app.use(cors({ origin: 'https://myproduct-store.netlify.app' }));
 
 app.use('/api/products', productRoutes);
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, '/frontend/dist')));
+// if (process.env.NODE_ENV === 'production') {
+//   app.use(express.static(path.join(__dirname, '/frontend/dist')));
 
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'frontend', 'dist', 'index.html'));
-  });
-}
+//   app.get('*', (req, res) => {
+//     res.sendFile(path.resolve(__dirname, 'frontend', 'dist', 'index.html'));
+//   });
+// }
 
 app.listen(PORT, () => {
   connectDB();
