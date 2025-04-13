@@ -3,6 +3,9 @@ import dotenv from 'dotenv';
 import { connectDB } from './config/db.js';
 import productRoutes from './routes/product.route.js';
 import path from 'path';
+import cors from 'cors';
+
+app.use(cors({ origin: 'https://myproduct-store.netlify.app' }));
 
 dotenv.config();
 
