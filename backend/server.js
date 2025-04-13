@@ -5,8 +5,6 @@ import productRoutes from './routes/product.route.js';
 import path from 'path';
 import cors from 'cors';
 
-app.use(cors({ origin: 'https://myproduct-store.netlify.app' }));
-
 dotenv.config();
 
 const app = express();
@@ -15,6 +13,7 @@ const PORT = process.env.PORT || 5000;
 const __dirname = path.resolve();
 
 app.use(express.json()); // allows us to accept JSON data in the req.body
+app.use(cors({ origin: 'https://myproduct-store.netlify.app' }));
 
 app.use('/api/products', productRoutes);
 
