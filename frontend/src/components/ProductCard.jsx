@@ -91,6 +91,8 @@ const ProductCard = ({ product }) => {
     }
   };
 
+  const modalBg = useColorModeValue('white', 'gray.700');
+
   return (
     <Box
       shadow="lg"
@@ -198,7 +200,7 @@ const ProductCard = ({ product }) => {
       >
         <ModalOverlay />
         <ModalContent
-          bg="white"
+          bg={modalBg}
           rounded="lg"
           shadow="xl"
           mx={4} // ✅ Add horizontal padding for mobile view
